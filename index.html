@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystal Raiders</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hud">
+    <div class="hud__group">
+      <div class="hud__label">Wave</div>
+      <div id="waveDisplay" class="hud__value">1</div>
+    </div>
+    <div class="hud__group">
+      <div class="hud__label">Score</div>
+      <div id="scoreDisplay" class="hud__value">0</div>
+    </div>
+    <div class="hud__group">
+      <div class="hud__label">Credits</div>
+      <div id="creditDisplay" class="hud__value">0</div>
+    </div>
+    <div class="hud__group">
+      <div class="hud__label">High Score</div>
+      <div id="highScoreDisplay" class="hud__value">0</div>
+    </div>
+    <button id="shopButton" class="hud__button">Shop (B)</button>
+  </div>
+  <canvas id="gameCanvas" width="960" height="600"></canvas>
+
+  <div class="overlay overlay--menu" id="menuOverlay">
+    <div class="overlay__panel">
+      <h1>Crystal Raiders</h1>
+      <p class="overlay__tagline">Survive waves of crystalline foes, upgrade your gear, and chase the high score.</p>
+      <div class="overlay__instructions">
+        <h2>How to Play</h2>
+        <ul>
+          <li>Move with <strong>W A S D</strong></li>
+          <li>Aim with the mouse, shoot with <strong>Left Click</strong> or hold <strong>Space</strong></li>
+          <li>Open the shop between waves with <strong>B</strong> or the Shop button</li>
+          <li>Buy upgrades using credits dropped by enemies</li>
+          <li>Survive as many waves as you can!</li>
+        </ul>
+      </div>
+      <button id="startButton" class="overlay__action">Start Raid</button>
+    </div>
+  </div>
+
+  <div class="overlay overlay--hidden" id="shopOverlay">
+    <div class="overlay__panel overlay__panel--shop">
+      <h2>Upgrade Shop</h2>
+      <p>Spend your hard-earned credits on powerful upgrades.</p>
+      <div id="shopItems" class="shop"></div>
+      <button id="resumeButton" class="overlay__action">Resume Battle</button>
+    </div>
+  </div>
+
+  <div class="overlay overlay--hidden" id="gameOverOverlay">
+    <div class="overlay__panel">
+      <h2>Raid Over</h2>
+      <p id="finalScoreText"></p>
+      <button id="retryButton" class="overlay__action">Retry</button>
+    </div>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
